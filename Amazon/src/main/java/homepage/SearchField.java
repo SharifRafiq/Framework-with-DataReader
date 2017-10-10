@@ -33,6 +33,15 @@ public class SearchField  extends CommonAPI {
     @FindBy(how = How.ID, using = "searchDropdownBox")
     WebElement searchDropDown;
 
+    public void searchItems()throws InterruptedException{
+        typeByCss("#twotabsearchtextbox", "978-1259667473");
+        clickByCss(".nav-input");
+        clearField("#twotabsearchtextbox");
+        typeByCssAndEnter("#twotabsearchtextbox","978-1118230725");
+        clearField("#twotabsearchtextbox");
+        typeByXpath(".//*[@id='twotabsearchtextbox']","Data Structure");
+        clickByXpath(".//*[@id='nav-search']/form/div[2]/div/input");
+    }
     public  void enterInputToSearchField()throws InterruptedException{
         String value = null;
         searchBoxInput.sendKeys("978-1118230725");
@@ -56,7 +65,6 @@ public class SearchField  extends CommonAPI {
 
     }
     public void clickOnSearchDropDown(){
-
         searchDropDown.click();
     }
     public void selectFromSearchDropDown()throws InterruptedException{

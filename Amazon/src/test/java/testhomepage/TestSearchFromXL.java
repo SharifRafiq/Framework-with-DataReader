@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class TestSearchFromXL extends CommonAPI{
-    @Test
+    @Test(enabled = false)
     public void testSearchFromExcel()throws IOException,InterruptedException {
         SearchFromXL searchFromXL = PageFactory.initElements(driver, SearchFromXL.class);
         searchFromXL.enterDataFromExcelAndSearch();
